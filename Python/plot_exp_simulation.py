@@ -24,7 +24,7 @@ if __name__ == "__main__":
     sigma = input("Enter Sigma in percent: ")
     ppm_list1, rel_intensity_list1 = read_file("../Temp_213K/Experiment/213k.csv")
     plot_line(ppm_list1, rel_intensity_list1, "green", "dashed", "Experiment")
-    ppm_list2, rel_intensity_list2 = read_file("../Temp_213K/Simulation_Spectra_Avg/LogNormal/213k_simulation_15sigma_lognormal_for_plotting.csv")
+    ppm_list2, rel_intensity_list2 = read_file("../Temp_213K/Simulation_Spectra_Avg/LogNormal/213k_simulation_20sigma_lognormal_for_plotting.csv")
     plot_line(ppm_list2, rel_intensity_list2, "red", "dotted", "Avg. Simulation")
     plt.xlabel('ppm')
     plt.ylabel('relative intensity')
