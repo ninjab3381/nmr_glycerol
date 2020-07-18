@@ -30,6 +30,6 @@ if __name__ == "__main__":
     plt.ylabel('relative intensity')
     plt.suptitle('Experiment vs. Weighted Avg. Simulation Results')
     plt.title('Temp = ' + temp + ' & Sigma = ' + sigma + '%')
-    plt.xlim(0, 150)
+    plt.xlim(-150, 150)
     plt.legend(loc='upper right')
     plt.show()
