@@ -20,16 +20,14 @@ def plot_line(ppm_list, rel_intensity_list, color, linestyle, label):
 
 
 if __name__ == "__main__":
-    temp = input("Enter Temp: ")
+    freq = input("Enter Jump Frequency: ")
     sigma = input("Enter Sigma in percent: ")
-    ppm_list1, rel_intensity_list1 = read_file("../Temp_233K/Experiment/233k.csv")
-    plot_line(ppm_list1, rel_intensity_list1, "green", "dashed", "Experiment")
-    ppm_list2, rel_intensity_list2 = read_file("../Temp_233K/Simulation_Spectra_Avg/LogNormal/T2_003/233k_simulation_05sigma_lognormal_for_plotting.csv")
+    ppm_list2, rel_intensity_list2 = read_file("../GAUSS/jump_freq_1200/Simulation_Spectra_Avg/800Hz_simulation_10sigma_lognormal_for_plotting.csv")
     plot_line(ppm_list2, rel_intensity_list2, "red", "dotted", "Avg. Simulation")
     plt.xlabel('ppm')
     plt.ylabel('relative intensity')
-    plt.suptitle('Experiment vs. Weighted Avg. Simulation Results')
-    plt.title('Temp = ' + temp + ' & Sigma = ' + sigma + '%')
-    plt.xlim(0, 150)
+    plt.suptitle('Weighted Avg. Simulation Results')
+    plt.title('Jump Freq = ' + freq + ' & Sigma = ' + sigma + '%')
+    plt.xlim(-150, 0)
     plt.legend(loc='upper right')
     plt.show()
