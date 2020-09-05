@@ -16,18 +16,20 @@ def read_file(filename):
 
 
 def plot_line(ppm_list, rel_intensity_list, color, linestyle, label):
-    plt.plot(ppm_list, rel_intensity_list, color=color, linestyle=linestyle, label=label)
+    ax.plot(ppm_list, rel_intensity_list, color=color, linestyle=linestyle, label=label)
 
 
 if __name__ == "__main__":
     freq = input("Enter Jump Frequency: ")
     sigma = input("Enter Sigma in percent: ")
-    ppm_list2, rel_intensity_list2 = read_file("../GAUSS_SKEWED/jump_freq_800/Simulation_Spectra_Avg/800Hz_simulation_15sigma_lognormal_skewed3_for_plotting.csv")
+    ppm_list2, rel_intensity_list2 = read_file("../GAUSS_SKEWED/jump_freq_800/Simulation_Spectra_Avg/800Hz_simulation_15sigma_lognormal_skewed1_for_plotting.csv")
+    fig, ax = plt.subplots()
     plot_line(ppm_list2, rel_intensity_list2, "red", "dotted", "Avg. Simulation")
-    plt.xlabel('ppm')
-    plt.ylabel('relative intensity')
+    ax.set_xlabel('ppm')
+    ax.set_ylabel('relative intensity')
     plt.suptitle('Weighted Avg. Simulation Results')
-    plt.title('Jump Freq = ' + freq + ' & Sigma = ' + sigma + '%')
-    plt.xlim(-150, 0)
+    ax.set_title('Jump Freq = ' + freq + ' & Sigma = ' + sigma + '%')
+    ax.set_xlim(-120, -50)
+    ax.invert_xaxis()
     plt.legend(loc='upper right')
     plt.show()
