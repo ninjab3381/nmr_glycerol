@@ -22,7 +22,7 @@ def plot_line(ppm_list, rel_intensity_list, color, linestyle, label):
 if __name__ == "__main__":
     freq = input("Enter Jump Frequency: ")
     sigma = input("Enter Sigma in percent: ")
-    ppm_list2, rel_intensity_list2 = read_file("../GAUSS_SKEWED/jump_freq_800/Simulation_Spectra_Avg/800Hz_simulation_15sigma_lognormal_skewed2_for_plotting.csv")
+    ppm_list2, rel_intensity_list2 = read_file("../GAUSS_SKEWED/jump_freq_800/Simulation_Spectra_Avg/800Hz_simulation_15sigma_lognormal_skewed3_for_plotting.csv")
     plot_line(ppm_list2, rel_intensity_list2, "red", "dotted", "Avg. Simulation")
     plt.xlabel('ppm')
     plt.ylabel('relative intensity')
